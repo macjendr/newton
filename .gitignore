@@ -1,0 +1,51 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules
+jspm_packages
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Grav theme default
+.sass-cache
+.DS_Store
+
+# OS generated
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Text editors and IDEs files
+.history
+.idea
+.vs_code
+.cache
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Processed files
+dist/
