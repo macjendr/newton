@@ -12,9 +12,20 @@ const rootPath = process.cwd();
  * @property {number}  proxyUrl               - URL for browsersync watch
  * @property {string}  paths                  - Collection of paths used by webpack
  * @property {object}  paths.root             - Root path to this grav theme
- * @property {number}  paths.assets           - Directory with work files
- * @property {number}  paths.dist             - Directory with processed and ready to use files
- * @property {number}  enabled                - Collection 
+ * @property {string}  paths.assets           - Directory with work files
+ * @property {string}  paths.dist             - Directory with processed and ready to use files
+ * @property {object}  enabled                - Collection of rules for production/development
+ * @property {boolean} enabled.sourceMaps     - Should webpack generate sourcemaps for CSS and JS
+ * @property {boolean} enabled.optimize       - Specify if files should be minified
+ * @property {boolean} enabled.cacheBusting   - If this is enabled name of generated files will be hashed on build to force browser to download them again
+ * @property {boolean} enabled.watcher        - Should watcher for files be enabled
+ * @property {object}  entry                  - Entry files that you modify - development JS and SCSS
+ * @property {array}   entry.main             - Paths to considered files
+ * @property {array}   watch                  - Paths of files that will be watched for changes by BrowserSync
+ * @property {string}  publicPath             - Root path of theme
+ * @property {string}  devUrl                 - Domain of your project that webpack points to
+ * @property {string}  cacheBusting           - Pattern for cache busting files
+ * @property {array}   browsers               - Settings for autoprefixer
  */
 const config = {
   copy: 'images/**/*',
@@ -42,7 +53,7 @@ const config = {
     "templates/**/*.twig"
   ],
   publicPath: "/user/themes/newton",
-  devUrl: "http://mixtura.loc",
+  devUrl: "http://domain.loc",
   cacheBusting: "[name]_[hash:8]",
   browsers: [
     "last 4 versions",
