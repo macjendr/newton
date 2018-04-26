@@ -28,45 +28,45 @@ const rootPath = process.cwd();
  * @property {array}   browsers               - Settings for autoprefixer
  */
 const config = {
-  copy: 'images/**/*',
-  proxyUrl: 'http://localhost:3000',
-  paths: {
-    root: rootPath,
-    assets: path.join(rootPath, 'assets'),
-    dist: path.join(rootPath, 'dist'),
-  },
-  enabled: {
-    sourceMaps: !isProduction,
-    optimize: isProduction,
-    cacheBusting: isProduction,
-    watcher: !!argv.watch,
-  },
-  entry: {
-    main: [
-      "./scripts/main.js",
-      "./styles/main.scss"
+    copy: 'images/**/*',
+    proxyUrl: 'http://localhost:3000',
+    paths: {
+        root: rootPath,
+        assets: path.join(rootPath, 'assets'),
+        dist: path.join(rootPath, 'dist'),
+    },
+    enabled: {
+        sourceMaps: !isProduction,
+        optimize: isProduction,
+        cacheBusting: isProduction,
+        watcher: !!argv.watch,
+    },
+    entry: {
+        main: [
+            "./scripts/main.js",
+            "./styles/main.scss",
+        ]
+    },
+    watch: [
+        "assets/scripts/**/*.js",
+        "assets/styles/**/*.scss",
+        "templates/**/*.twig",
+    ],
+    publicPath: "/user/themes/newton",
+    devUrl: "http://domain.loc",
+    cacheBusting: "[name]_[hash:8]",
+    browsers: [
+        "last 4 versions",
+        "android 4",
+        "opera 12",
     ]
-  },
-  watch: [
-    "assets/scripts/**/*.js",
-    "assets/styles/**/*.scss",
-    "templates/**/*.twig"
-  ],
-  publicPath: "/user/themes/newton",
-  devUrl: "http://domain.loc",
-  cacheBusting: "[name]_[hash:8]",
-  browsers: [
-    "last 4 versions",
-    "android 4",
-    "opera 12"
-  ]
 };
 
 config.watch.push(`${path.basename(config.paths.assets)}/${config.copy}`);
 config.watch = uniq(config.watch);
 
 module.exports = merge(config, {
-  env: Object.assign({ production: isProduction, development: !isProduction }, argv.env),
-  publicPath: `${config.publicPath}/${path.basename(config.paths.dist)}/`,
-  manifest: {},
+    env: Object.assign({ production: isProduction, development: !isProduction }, argv.env),
+    publicPath: `${config.publicPath}/${path.basename(config.paths.dist)}/`,
+    manifest: {},
 });

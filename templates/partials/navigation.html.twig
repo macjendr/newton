@@ -1,0 +1,38 @@
+<header class="header">
+    <nav class="main_nav">
+        <div class="main_nav__hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            {% for page in pages.children %}
+                {% if page.visible %}
+                    {% if page.children %}
+                        {% for child in page.children %}
+                        {% set current_page = (child.active or child.activeChild) ? ' main_nav__link--active' : '' %}
+                            {% if child.visible %}
+                                <li class="main_nav__item">
+                                    <a href="{{ child.url }}" class="main_nav__link{{ current_page }}"><span>{{ child.menu|upper }}</span></a>
+                                </li>
+                                {% if loop.index == 3 %}
+                                <li class="main_nav__item main_nav__item--logo">
+                                    <a href="/" class="main_nav__link--logo">
+                                        <svg class="icon--main_logo">
+                                            <use xlink:href="#icon--main_logo"></use>
+                                        </svg>
+                                        <svg class="icon--main_logo_horizontal">
+                                            <use xlink:href="#icon--main_logo_horizontal"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+</header>

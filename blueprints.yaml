@@ -1,0 +1,14 @@
+name: Newton
+version: 1.0.0
+description: Grav developer theme
+icon:  desktop
+author:
+  name: Maciej Jendryczka
+  email: macjendr@gmail.com
+homepage: https://github.com/macjendr/newton
+keywords: theme, developer, sass, webpack, es6, vanilla, twig, grav
+bugs: https://github.com/macjendr/newton/issues
+license: MIT
+
+dependencies:
+    - { name: grav, version: '>=1.4.0-rc.1' }
