@@ -8,6 +8,7 @@ The **Newton** Theme is for [Grav CMS](http://github.com/getgrav/grav). It's a v
 2. eslint with airbnb-base configuration to lint JS code and babel to parse modern ES6 to be compatible with latest browsers.
 3. special partial in twig templates - `icons.html.twig` to store inline svg icons instead of font icons. You can prepare collections of those svgs with tools like [icomoon.io](https://icomoon.io/).
 4. Autoprefixer for styles.
+5. no jQuery dependency - many great plugins use ES6 now and I dropped another layer of abstraction to focus on vanilla JS, but feel free to add it in `templates/partials/base.html.twig` if you need it!
 
 Nothing fancy was made with templates or php files, so feel free to replace them with, for example, quark theme files and tweak them accordingly. 
 
