@@ -75,7 +75,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.twig$/,
+        test: /\.(twig|svg)$/,
         use: {
           loader: 'raw-loader',
         },

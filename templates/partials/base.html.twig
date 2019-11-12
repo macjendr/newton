@@ -30,18 +30,20 @@
 <body id="top" class="{{ page.header.body_classes }}">
 {% include 'partials/icons.html.twig' %}
 {% block header %}
-    <div class="header">
-        <div class="wrapper padding">
-            <a class="logo left" href="{{ home_url }}">
-                {{ config.site.title }}
-            </a>
-            {% block header_navigation %}
-            <nav class="main-nav">
-                {% include 'partials/navigation.html.twig' %}
-            </nav>
-            {% endblock %}
-        </div>
-    </div>
+    <header>
+        <nav>
+            <div class="wrapper padding">
+                <a class="logo left" href="{{ home_url }}">
+                    {{ config.site.title }}
+                </a>
+                {% block header_navigation %}
+                <nav class="main-nav">
+                    {% include 'partials/navigation.html.twig' %}
+                </nav>
+                {% endblock %}
+            </div>
+        </nav>
+    </header>
 {% endblock %}
 
 {% block body %}
