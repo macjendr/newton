@@ -2,43 +2,26 @@
     {% for p in page.children.visible %}
         {% set current_page = (p.active or p.activeChild) ? 'selected' : '' %}
         {% if p.children.visible.count > 0 %}
-            <li class="has-children {{ current_page }}">
-                <a href="{{ p.url }}">
-                    {{ p.menu }}
-                </a>
-                <ul>
-                    {{ _self.loop(p) }}
-                </ul>
-            </li>
+            <a href="{{ p.url }}" class="pseudo button has_children {{ current_page }}">{{ p.menu }}</a>
+            <ul>
+                {{ _self.loop(p) }}
+            </ul>
         {% else %}
-            <li class="{{ current_page }}">
-                <a href="{{ p.url }}">
-                    {{ p.menu }}
-                </a>
-            </li>
+            <a href="{{ p.url }}" class="pseudo button {{ current_page }}">{{ p.menu }}</a>
         {% endif %}
     {% endfor %}
 {% endmacro %}
 
-<ul>
+<div class="menu">
     {% if theme_config.dropdown.enabled %}
         {{ _self.loop(pages) }}
     {% else %}
         {% for page in pages.children.visible %}
             {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-            <li class="{{ current_page }}">
-                <a href="{{ page.url }}">
-                    {{ page.menu }}
-                </a>
-            </li>
+            <a href="{{ page.url }}" class="pseudo button {{ current_page }}">{{ page.menu }}</a>
         {% endfor %}
     {% endif %}
     {% for mitem in site.menu %}
-        <li>
-            <a href="{{ mitem.url }}">
-                {{ mitem.text }}
-            </a>
-        </li>
+        <a href="{{ mitem.url }}" class="pseudo button">{{ mitem.text }}</a>
     {% endfor %}
-</ul>
-
+</div>

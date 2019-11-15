@@ -31,17 +31,16 @@
 {% include 'partials/icons.html.twig' %}
 {% block header %}
     <header>
-        <nav>
-            <div class="wrapper padding">
-                <a class="logo left" href="{{ home_url }}">
-                    {{ config.site.title }}
+        <nav class="flex">
+                <a href="#" class="brand">
+                    <svg class="icon icon-newton-logo-mini"><use xlink:href="#icon-newton-logo-mini"></use></svg>
                 </a>
+                <input id="bmenub" type="checkbox" class="show">
+                <label for="bmenu" class="burger toggle pseudo button">menu</label>
                 {% block header_navigation %}
-                <nav class="main-nav">
                     {% include 'partials/navigation.html.twig' %}
-                </nav>
                 {% endblock %}
-            </div>
+
         </nav>
     </header>
 {% endblock %}
