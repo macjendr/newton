@@ -1,9 +1,9 @@
 
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const srcPath = path.resolve(__dirname, 'assets')
-const distPath = path.resolve(__dirname, 'dist')
+const srcPath = path.resolve(__dirname, 'assets');
+const distPath = path.resolve(__dirname, 'dist');
 const rootPath = process.cwd();
 
 const config = {
@@ -25,7 +25,12 @@ module.exports = {
     main: [
       path.resolve(srcPath, 'js/main.js'),
       path.resolve(srcPath, 'scss/main.scss'),
-    ]
+    ],
+  },
+  resolve: {
+    alias: {
+      'uikit-util': path.resolve(__dirname, 'node_modules/uikit/src/js/util'),
+    },
   },
   context: srcPath,
   output: {
@@ -66,7 +71,8 @@ module.exports = {
           },
           'css-loader',
           {
-            loader: 'postcss-loader', options: {
+            loader: 'postcss-loader',
+            options: {
               config: { path: __dirname, ctx: config },
               sourceMap: config.enabled.sourceMaps,
             },
@@ -87,6 +93,6 @@ module.exports = {
       filename: '[name].css',
     }),
   ],
-}
+};
 
 //"dev": "webpack-dev-server --config webpack.config.babel.js --mode development --port 8000 --hot --disable-host-check --reload",

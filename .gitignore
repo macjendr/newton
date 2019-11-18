@@ -49,3 +49,6 @@ Thumbs.db
 
 # Processed files
 dist/
+
+assets/scss/theme.scss
+assets/theme/*.scss

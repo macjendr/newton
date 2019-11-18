@@ -9,6 +9,7 @@ The **Newton** Theme is for [Grav CMS](http://github.com/getgrav/grav). It's a v
 3. special partial in twig templates - `icons.html.twig` to store inline svg icons instead of font icons. You can prepare collections of those svgs with tools like [icomoon.io](https://icomoon.io/).
 4. Autoprefixer for styles.
 5. no jQuery dependency - many great plugins use ES6 now and I dropped another layer of abstraction to focus on vanilla JS, but feel free to add it in `templates/partials/base.html.twig` if you need it!
+6. OPTIONAL UiKit integration - ths is the framework that can be fully imported or used with defined mixins (which means that generated CSS is empty until definitions of selectors with mixins appear in local .scss files)
 
 Nothing fancy was made with templates or php files, so feel free to replace them with, for example, quark theme files and tweak them accordingly. 
 
