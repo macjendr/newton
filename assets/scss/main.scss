@@ -1,35 +1,18 @@
 // 1. Your custom variables and variable overwrites.
-$global-link-color: rgb(190, 81, 48);
+$global-link-color: #DA7D02;
 
 // 2. Import default variables and available mixins.
-@import "../../node_modules/uikit/src/scss/variables.scss";
-@import "../../node_modules/uikit/src/scss/mixins.scss";
+@import "uikit/src/scss/variables-theme.scss";
+@import "uikit/src/scss/mixins-theme.scss";
 
 // 3. Your custom mixin overwrites.
 @mixin hook-card() { color: #000; }
 
 // 4. Import UIkit.
-// @import "../../node_modules/uikit/src/scss/uikit-theme.scss";
-// @import "../../node_modules/uikit/src/scss/uikit.scss";
-
-@import "../../node_modules/uikit/src/scss/components/base.scss";
-
-// just an example: imported container and tooltip, but not button styling. 
-// changed tooltip background to red
-// See how it looks with this added to twig:
-// <div class="uk-container">
-//     <div class="uk-card uk-card-body uk-card-primary">
-//         <h3 class="uk-card-title">Example headline</h3>
-
-//         <button class="uk-button uk-button-default" uk-tooltip="title: Hello World">Hover</button>
-//     </div>
-// </div>
-$tooltip-background: red;
-@import "../../node_modules/uikit/src/scss/components/container.scss";
-@import "../../node_modules/uikit/src/scss/components/tooltip.scss";
+@import "uikit/src/scss/uikit-theme.scss";
 
 // local customization of uikit, should import components from ./theme 
 // directory, just like uikit
 // NOTICE: this file and theme/ directory is by default ignored by git. 
 // Remove relative gitignore rules if those files should be commited
-// @import "theme.scss";
+// @import "theme/theme.scss";

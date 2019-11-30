@@ -1,0 +1,28 @@
+pl:
+  GENERAL:
+    YES: 'Tak'
+    NO: 'Nie'
+  UIKIT:
+    ACCORDION: 'Lista Rozwijalna'
+    ACCORDION_HELP: 'Tworzy "akordeon" - listę tytułów z rozwijaną treścią'
+    ACCORDION:
+      ANIMATION_HELP: 'Czy rozwijanie elementów ma się animować'
+    OPTION:
+      TITLE: 'Tytuł'
+      CONTENT: 'Treść'
+      ACTIVE: 'Aktywny'
+      ANIMATION: 'Animacja'
+en:
+  GENERAL:
+    YES: 'Yes'
+    NO: 'No'
+  UIKIT:
+    ACCORDION: 'Accordion'
+    ACCORDION_HELP: 'Creating accordion of titles and expandable content'
+    ACCORDION:
+      ANIMATION_HELP: 'Should expand animate'
+    OPTION:
+      TITLE: 'Title'
+      CONTENT: 'Content'
+      ACTIVE: 'Active'
+      ANIMATION: 'Animate'
