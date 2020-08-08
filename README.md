@@ -9,7 +9,7 @@ The **Newton** Theme is for [Grav CMS](http://github.com/getgrav/grav). It's a v
 3. special partial in twig templates - `icons.html.twig` to store inline svg icons instead of font icons. You can prepare collections of those svgs with tools like [icomoon.io](https://icomoon.io/).
 4. Autoprefixer for styles.
 5. no jQuery dependency - many great plugins use ES6 now and I dropped another layer of abstraction to focus on vanilla JS, but feel free to add it in `templates/partials/base.html.twig` if you need it!
-6. OPTIONAL UiKit integration - ths is the framework that can be fully imported or used with defined mixins (which means that generated CSS is empty until definitions of selectors with mixins appear in local .scss files)
+6. OPTIONAL UiKit integration - this is the framework that can be fully imported or used with defined mixins (which means that generated CSS is empty until definitions of selectors with mixins appear in local .scss files)
 
 Nothing fancy was made with templates or php files, so feel free to replace them with, for example, quark theme files and tweak them accordingly. 
 
@@ -18,6 +18,10 @@ Nothing fancy was made with templates or php files, so feel free to replace them
 This theme only needs PHP 7.x.x (with modules that grav will notify you about during installation) and npm in order to work, thanks to [built-in PHP Webserver](https://learn.getgrav.org/16/basics/installation#running-grav-with-the-built-in-php-webserver-using-router-php)
 
 Unpack theme to `/user/themes` directory of your Grav installation and run `npm install`. Then run `npm run dev` to init webpack dev server that will watch for changes in your scss/js and hot reload the first one after edit.
+
+## UIKIT shortcodes
+
+In order to enable special `[uk attrs=...]` shortcodes in markdown editor you have to install (GRAV official shortcode plugin)[https://github.com/getgrav/grav-plugin-shortcode-core] and change Custom Shortcodes path to `/user/themes/newton/custom/shortcodes` inside plugin config.
 
 ## This is a work in progress!
 

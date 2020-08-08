@@ -201,4 +201,119 @@ form:
                   classes: fancy
                   validate:
                     type: commalist
-
+            uikit.lightbox:
+              name: uikit_lightbox
+              label: UIKIT.LIGHTBOX
+              help: UIKIT.LIGHTBOX_HELP
+              type: list
+              fields: 
+                .animation:
+                  name: lightbox_animation
+                  label: UIKIT.OPTION.ANIMATION
+                  type: select
+                  classes: fancy
+                  default: 'slide'
+                  options:
+                    slide: 'slide'
+                    fade: 'fade'
+                    scale: 'ease-in'
+                  validate:
+                    type: bool
+                .autoplayoptions:
+                  name: lightbox_autoplayoptions
+                  label: UIKIT.LIGHTBOX.AUTOPLAYOPTIONS
+                  type: fieldset
+                  title: UIKIT.LIGHTBOX.AUTOPLAYOPTIONS
+                  help: UIKIT.LIGHTBOX.AUTOPLAYOPTIONS_HELP
+                  info: UIKIT.LIGHTBOX.AUTOPLAYOPTIONS_INFO
+                  text: UIKIT.LIGHTBOX.AUTOPLAYOPTIONS_TEXT
+                  icon: play       # Fork Awesome icons system (see : forkaweso.me).
+                  collapsed: true      # Initial state of fieldset (see collapsible option)
+                  collapsible: true    # Whether one can expand the fieldset or not
+                  fields:
+                    .autoplay:
+                      name: lightbox_autoplay
+                      label: UIKIT.OPTION.AUTOPLAY
+                      type: number
+                      default: 0
+                    .autoplayinterval:
+                      name: lightbox_autoplayinterval
+                      label: UIKIT.OPTION.AUTOPLAYINTERVAL
+                      type: number
+                      default: 0
+                    .pauseonhover:
+                      name: lightbox_pauseonhover
+                      label: UIKIT.OPTION.PAUSEONHOVER
+                      type: toggle
+                      default: 0
+                      options:
+                        0: GENERAL.NO
+                        1: GENERAL.YES
+                      validate:
+                        type: bool
+                    .videoautoplay:
+                      name: lightbox_videoautoplay
+                      label: UIKIT.OPTION.VIDEOAUTOPLAY
+                      type: toggle
+                      default: 0
+                      options:
+                        0: GENERAL.NO
+                        1: GENERAL.YES
+                      validate:
+                        type: bool
+                .slides:
+                  name: lightbox_slides
+                  label: UIKIT.OPTION.SLIDES
+                  help: UIKIT.OPTION.SLIDES_HELP
+                  type: list
+                  fields:
+                    .images:
+                      type: file
+                      label: UIKIT.LIGHTBOX.SLIDES
+                      multiple: true
+                      accept:
+                        - image/*
+                        - .mp4
+                    .youtube:
+                      type: text
+                    .vimeo:
+                      type: text
+                    .googlemap:
+                      type: text
+                .initializer:
+                  name: lightbox_initializer
+                  label: UIKIT.LIGHTBOX.INITIALIZER
+                  type: select
+                  classes: fancy
+                  default: 'link'
+                  options:
+                    link: 'link'
+                    image: 'image'
+                  validate:
+                    type: bool
+            uikit.marker:
+              name: marker
+              type: list
+              label: UIKIT.MARKER
+              fields:
+                .image:
+                  name: marker_image
+                  type: pagemediaselect
+                  label: UIKIT.OPTION.MARKER_IMAGE
+                .x:
+                  name: marker_x
+                  type: text
+                  label: UIKIT.OPTION.MARKER_X
+                .y:
+                  name: marker_y
+                  type: text
+                  label: UIKIT.OPTION.MARKER_Y
+                .tooltip:
+                  name: marker_tooltip
+                  type: text
+                  label: UIKIT.OPTION.MARKER_DESCRIPTION
+            uikit.switcher:
+              name: switcher
+              type: list
+              label: UIKIT.SWITCHER
+            

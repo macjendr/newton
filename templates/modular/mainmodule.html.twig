@@ -1,0 +1,6 @@
+<h2>{{ page.title }}</h2>
+<div class="columns">
+{% for module in page.collection() %}
+    <div class="column">{{ module.content }}</div>
+{% endfor %}
+</div>
