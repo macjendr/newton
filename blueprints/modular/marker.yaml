@@ -1,0 +1,37 @@
+title: default
+'@extends':
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            uikit.marker:
+              name: marker
+              type: list
+              label: UIKIT.MARKER
+              fields:
+                .image:
+                  name: marker_image
+                  type: pagemediaselect
+                  label: UIKIT.OPTION.MARKER_IMAGE
+                .x:
+                  name: marker_x
+                  type: text
+                  label: UIKIT.OPTION.MARKER_X
+                .y:
+                  name: marker_y
+                  type: text
+                  label: UIKIT.OPTION.MARKER_Y
+                .tooltip:
+                  name: marker_tooltip
+                  type: text
+                  label: UIKIT.OPTION.MARKER_DESCRIPTION
+            uikit.switcher:
+              name: switcher
+              type: list
+              label: UIKIT.SWITCHER
+            

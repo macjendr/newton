@@ -1,0 +1,112 @@
+title: Card
+'@extends':
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            uikit.card:
+              name: uikit_card
+              label: UIKIT.CARD
+              help: UIKIT.CARD_HELP
+              type: list
+              fields:
+                .title:
+                  name: card_title
+                  label: UIKIT.OPTION.TITLE
+                  type: text
+                .content:
+                  name: card_content
+                  label: UIKIT.OPTION.CONTENT
+                  type: editor
+                .sections:
+                  name: card_sections
+                  label: UIKIT.CARD.SECTIONS
+                  type: fieldset
+                  title: Your title
+                  help: Help text
+                  info: Info text
+                  text: Text inside fieldset and before other fields
+                  icon: comments       # Fork Awesome icons system (see : forkaweso.me).
+                  collapsed: true      # Initial state of fieldset (see collapsible option)
+                  collapsible: true    # Whether one can expand the fieldset or not
+                  fields:
+                    .sections.header:
+                      name: card_header
+                      label: UIKIT.OPTION.HEADER_CONTENT
+                      type: editor
+                    .sections.footer:
+                      name: card_footer
+                      label: UIKIT.OPTION.FOOTER_CONTENT
+                      type: editor
+                .image:
+                  name: card_image
+                  label: UIKIT.OPTION.IMAGE
+                  type: pagemediaselect
+                  multiple: true
+                .imageposition:
+                  name: card_imageposition
+                  label: UIKIT.OPTION.IMAGEPOSITION
+                  type: select
+                  default: top
+                  options:
+                    top: "uk-card-media-top"
+                    bottom: "uk-card-media-bottom"
+                    left: "uk-card-media-left"
+                    right: "uk-card-media-right"
+                .badge:
+                  name: card_badge
+                  label: UIKIT.CARD.BADGE
+                  type: fieldset
+                  title: Your title
+                  help: Help text
+                  info: Info text
+                  text: Text inside fieldset and before other fields
+                  icon: comments       # Fork Awesome icons system (see : forkaweso.me).
+                  collapsed: true      # Initial state of fieldset (see collapsible option)
+                  collapsible: true    # Whether one can expand the fieldset or not
+                  fields:
+                    .badge.title:
+                      name: card_badge_title
+                      label: UIKIT.OPTION.BADGE_TITLE
+                      type: text
+                    .badge.icon:
+                      name: card_footer
+                      label: UIKIT.OPTION.BADGE_ICON
+                      type: selectize
+                      selectize:
+                        options:
+                          - text: "check"
+                            value: "check"
+                          - text: "heart"
+                            value: "heart"
+                      size: large
+                      classes: fancy
+                      validate:
+                        type: commalist
+                .class:
+                  name: card_class
+                  label: UIKIT.OPTION.CLASS
+                  type: selectize
+                  selectize:
+                    options:
+                      - text: "uk-card-default"
+                        value: "uk-card-default"
+                      - text: "uk-card-primary"
+                        value: "uk-card-primary"
+                      - text: "uk-card-secondary"
+                        value: "uk-card-secondary"
+                      - text: "uk-card-hover"
+                        value: "uk-card-hover"
+                      - text: "uk-card-small"
+                        value: "uk-card-small"
+                      - text: "uk-card-large"
+                        value: "uk-card-large"
+                  size: large
+                  classes: fancy
+                  validate:
+                    type: commalist
