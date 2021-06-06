@@ -1,5 +1,6 @@
 <h2>{{ page.title }}</h2>
-<div class="columns">
+{{ print_r(page.header.module.utils) }}
+<div class="uk-background-cover {{ page.header.module.utils.animation.type }}" style="background-image: url({{ page.url(true) }}/{{ page.header.module.utils.background }})">
 {% for module in page.collection() %}
     <div class="column">{{ module.content }}</div>
 {% endfor %}

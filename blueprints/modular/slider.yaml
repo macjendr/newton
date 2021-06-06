@@ -1,0 +1,134 @@
+title: Slider
+'@extends':
+  type: modular/module
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+
+          fields:
+            header.uikit:
+              name: uikit
+              type: fieldset
+              title: UIKIT.SLIDER
+              help: UIKIT.SLIDER.HELP
+              info: UIKIT.SLIDER.INFO
+              text: UIKIT.SLIDER.TEXT
+              icon: pencil
+              collapsed: false
+              collapsible: true
+              fields:
+                header.uikit.slider:
+                  type: list
+                  name: module_utils
+                  label: UIKIT.SLIDER
+                  help: UIKIT.SLIDER.HELP
+                  type: fieldset
+                  title: UIKIT.SLIDER
+                  info: UIKIT.SLIDER.INFO
+                  style: vertical
+                  icon: sliders
+                  collapsed: false
+                  collapsible: false
+                  fields: 
+                    header.uikit.slider.animation:
+                      name: slider_animation
+                      label: UIKIT.SLIDER.ANIMATION
+                      type: select
+                      classes: fancy
+                      default: 'slide'
+                      options:
+                        slide: 'slide'
+                        fade: 'fade'
+                        scale: 'ease-in'
+                      validate:
+                        type: bool
+                    header.uikit.slider.autoplayoptions:
+                      name: slider_autoplayoptions
+                      label: UIKIT.SLIDER.AUTOPLAYOPTIONS
+                      type: fieldset
+                      title: UIKIT.SLIDER.AUTOPLAYOPTIONS
+                      help: UIKIT.SLIDER.AUTOPLAYOPTIONS_HELP
+                      info: UIKIT.SLIDER.AUTOPLAYOPTIONS_INFO
+                      text: UIKIT.SLIDER.AUTOPLAYOPTIONS_TEXT
+                      icon: play       # Fork Awesome icons system (see : forkaweso.me).
+                      collapsed: true      # Initial state of fieldset (see collapsible option)
+                      collapsible: true    # Whether one can expand the fieldset or not
+                      fields:
+                        header.uikit.slider.autoplayoptions.autoplay:
+                          name: slider_autoplay
+                          label: UIKIT.SLIDER.AUTOPLAY
+                          type: number
+                          default: 0
+                        header.uikit.slider.autoplayoptions.autoplayinterval:
+                          name: slider_autoplayinterval
+                          label: UIKIT.SLIDER.AUTOPLAYINTERVAL
+                          type: number
+                          default: 0
+                        header.uikit.slider.autoplayoptions.pauseonhover:
+                          name: slider_pauseonhover
+                          label: UIKIT.SLIDER.PAUSEONHOVER
+                          type: toggle
+                          default: 0
+                          options:
+                            0: GENERAL.NO
+                            1: GENERAL.YES
+                          validate:
+                            type: bool
+                        header.uikit.slider.autoplayoptions.videoautoplay:
+                          name: slider_videoautoplay
+                          label: UIKIT.SLIDER.VIDEOAUTOPLAY
+                          type: toggle
+                          default: 0
+                          options:
+                            0: GENERAL.NO
+                            1: GENERAL.YES
+                          validate:
+                            type: bool
+                    header.uikit.slider.slides:
+                      name: slider_slides
+                      label: UIKIT.OPTION.SLIDES
+                      help: UIKIT.OPTION.SLIDES_HELP
+                      type: list
+                      fields:
+                        .images:
+                          name: slider_slides
+                          label: UIKIT.SLIDER.SLIDES
+                          type: pagemediaselect
+                          multiple: false
+                          # type: file
+                          # label: UIKIT.SLIDER.SLIDES
+                          # multiple: true
+                          # accept:
+                          #   - image/*
+                          #   - .mp4
+                        .youtube:
+                          name: slider_slides_youtube
+                          label: UIKIT.SLIDER.SLIDES.YOUTUBE
+                          type: text
+                        .vimeo:
+                          name: slider_slides_youtube
+                          label: UIKIT.SLIDER.SLIDES.VIMEO
+                          type: text
+                        .googlemap:
+                          name: slider_slides_youtube
+                          label: UIKIT.SLIDER.SLIDES.GOOGLEMAP
+                          type: text
+                    header.uikit.slider.initializer:
+                      name: slider_initializer
+                      label: UIKIT.SLIDER.INITIALIZER
+                      type: select
+                      classes: fancy
+                      default: 'link'
+                      options:
+                        link: 'link'
+                        image: 'image'
+                      validate:
+                        type: bool

@@ -1,102 +1,118 @@
 title: Accordion
 '@extends':
-  type: default
-  context: blueprints://pages
+  type: modular/module
 
 form:
   fields:
     tabs:
+      type: tabs
+      active: 1
+
       fields:
         content:
+          type: tab
+
           fields:
-            uikit.accordion:
-              name: uikit_accordion
-              label: UIKIT.ACCORDION
-              help: UIKIT.ACCORDION_HELP
-              type: list
+            header.uikit:
+              name: uikit
+              type: fieldset
+              title: UIKIT.ACCORDION
+              help: UIKIT.ACCORDION.HELP
+              info: UIKIT.ACCORDION.INFO
+              text: UIKIT.ACCORDION.TEXT
+              icon: pencil
+              collapsed: false
+              collapsible: true
               fields:
-                .title:
-                  name: accordion_title
-                  label: UIKIT.OPTION.TITLE
-                  type: text
-                .content:
-                  name: accordion_content
-                  label: UIKIT.OPTION.CONTENT
-                  type: editor
-                .active:
-                  name: accordion_active
-                  label: UIKIT.OPTION.ACTIVE
-                  type: toggle
-                  default: 0
-                  options:
-                    0: GENERAL.NO
-                    1: GENERAL.YES
-                  validate:
-                    type: bool
-                .animation:
-                  name: accordion_animation
-                  label: UIKIT.OPTION.ANIMATION
-                  help: UIKIT.ACCORDION.ANIMATION_HELP
-                  type: toggle
-                  default: 1
-                  options:
-                    0: GENERAL.NO
-                    1: GENERAL.YES
-                  validate:
-                    type: bool
-                .duration:
-                  name: accordion_duration
-                  label: UIKIT.OPTION.DURATION
-                  type: number
-                  default: 200
-                .transition:
-                  name: accordion_transition
-                  label: UIKIT.OPTION.TRANSITION
-                  type: select
-                  classes: fancy
-                  default: 'ease'
-                  options:
-                    ease: 'ease'
-                    linear: 'linear'
-                    ease-in: 'ease-in'
-                    ease-in-out: 'ease-in-out'
-                    ease-out: 'ease-out'
-                  validate:
-                    type: bool
-                .collapsible:
-                  name: accordion_collapsible
-                  label: UIKIT.OPTION.COLLAPSIBLE
-                  type: toggle
-                  default: 1
-                  options:
-                    0: GENERAL.NO
-                    1: GENERAL.YES
-                  validate:
-                    type: bool
-                .multiple:
-                  name: accordion_multiple
-                  label: UIKIT.OPTION.MULTIPLE
-                  type: toggle
-                  default: 1
-                  options:
-                    0: GENERAL.NO
-                    1: GENERAL.YES
-                  validate:
-                    type: bool
-                .class:
-                  name: accordion_class
-                  label: UIKIT.OPTION.CLASS
-                  type: selectize
-                  selectize:
-                    options:
-                      - text: "test"
-                        value: "real value 1"
-                      - text: "test-2"
-                        value: "real value 2"
-                      - text: "test-3"
-                        value: "real value 3"
-                  size: large
-                  classes: fancy
-                  validate:
-                    type: commalist
-                # missing: content, targets, toggle
+                header.uikit.accordion:
+                  name: accordion
+                  type: list
+                  label: UIKIT.ACCORDION
+                  # help: UIKIT.ACCORDION_HELP
+                  style: vertical
+                  collapsed: false
+                  collapsible: true
+                  fields:
+                    .title:
+                      name: accordion_title
+                      label: UIKIT.OPTION.TITLE
+                      type: text
+                    .content:
+                      name: accordion_content
+                      label: UIKIT.OPTION.CONTENT
+                      type: editor
+                    .active:
+                      name: accordion_active
+                      label: UIKIT.OPTION.ACTIVE
+                      type: toggle
+                      default: 0
+                      options:
+                        0: GENERAL.NO
+                        1: GENERAL.YES
+                      validate:
+                        type: bool
+                    .animation:
+                      name: accordion_animation
+                      label: UIKIT.OPTION.ANIMATION
+                      help: UIKIT.ACCORDION.ANIMATION_HELP
+                      type: toggle
+                      default: 1
+                      options:
+                        0: GENERAL.NO
+                        1: GENERAL.YES
+                      validate:
+                        type: bool
+                    .duration:
+                      name: accordion_duration
+                      label: UIKIT.OPTION.DURATION
+                      type: number
+                      default: 200
+                    .transition:
+                      name: accordion_transition
+                      label: UIKIT.OPTION.TRANSITION
+                      type: select
+                      classes: fancy
+                      default: 'ease'
+                      options:
+                        ease: 'ease'
+                        linear: 'linear'
+                        ease-in: 'ease-in'
+                        ease-in-out: 'ease-in-out'
+                        ease-out: 'ease-out'
+                    .collapsible:
+                      name: accordion_collapsible
+                      label: UIKIT.OPTION.COLLAPSIBLE
+                      type: toggle
+                      default: 1
+                      options:
+                        0: GENERAL.NO
+                        1: GENERAL.YES
+                      validate:
+                        type: bool
+                    .multiple:
+                      name: accordion_multiple
+                      label: UIKIT.OPTION.MULTIPLE
+                      type: toggle
+                      default: 1
+                      options:
+                        0: GENERAL.NO
+                        1: GENERAL.YES
+                      validate:
+                        type: bool
+                    .class:
+                      name: accordion_class
+                      label: UIKIT.OPTION.CLASS
+                      type: selectize
+                      selectize:
+                        options:
+                          - text: "test"
+                            value: "real value 1"
+                          - text: "test-2"
+                            value: "real value 2"
+                          - text: "test-3"
+                            value: "real value 3"
+                      size: large
+                      classes: fancy
+                      validate:
+                        type: commalist
+                    # missing: content, targets, toggle

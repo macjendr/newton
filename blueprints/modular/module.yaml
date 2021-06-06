@@ -1,0 +1,171 @@
+title: Module
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+
+          fields:
+            header.module.utils:
+              type: fieldset
+              name: utils
+              title: MODULE.UTILS
+              help: MODULE.UTILS.HELP
+              info: MODULE.UTILS.INFO
+              text: MODULE.UTILS.TEXT
+              icon: sliders       # Fork Awesome icons system (see : forkaweso.me).
+              collapsed: true      # Initial state of fieldset (see collapsible option)
+              collapsible: true    # Whether one can expand the fieldset or not
+              fields:
+                header.module.utils.background: # fieldset needs full path from header in order to remember state
+                  name: uikit_background
+                  label: UIKIT.BACKGROUND
+                  type: pagemediaselect
+                  multiple: false
+                header.module.utils.animation:
+                  name: uikit_animation
+                  label: UIKIT.ANIMATION
+                  type: fieldset
+                  title: UIKIT.ANIMATION
+                  help: UIKIT.ANIMATION.HELP
+                  info: UIKIT.ANIMATION.INFO
+                  icon: play-circle       # Fork Awesome icons system (see : forkaweso.me).
+                  collapsed: true      # Initial state of fieldset (see collapsible option)
+                  collapsible: true    # Whether one can expand the fieldset or not
+                  fields:
+                    header.module.utils.animation.animate:
+                      name: module_animate
+                      label: MODULE.ANIMATE
+                      type: toggle
+                      default: 0
+                      options:
+                        0: GENERAL.NO
+                        1: GENERAL.YES
+                      validate:
+                        type: bool
+                    header.module.utils.animation.type:
+                      name: uikit_animation_type
+                      label: UIKIT.ANIMATION.TYPE
+                      type: select
+                      classes: fancy
+                      default: 'fade'
+                      options:
+                        uk-animation-fade: 'fade'
+                        uk-animation-scale-up: 'scale-up'
+                        uk-animation-scale-down: 'scale-down'
+                        uk-animation-slide-top: 'slide-top'
+                        uk-animation-slide-bottom: 'slide-bottom'
+                        uk-animation-slide-left: 'slide-left'
+                        uk-animation-slide-right: 'slide-right'
+                        uk-animation-slide-top-small: 'slide-top-small'
+                        uk-animation-slide-bottom-small: 'slide-bottom-small'
+                        uk-animation-slide-left-small: 'slide-left-small'
+                        uk-animation-slide-right-small: 'slide-right-small'
+                        uk-animation-slide-top-medium: 'slide-top-medium'
+                        uk-animation-slide-bottom-medium: 'slide-bottom-medium'
+                        uk-animation-slide-left-medium: 'slide-left-medium'
+                        uk-animation-slide-right-medium: 'slide-right-medium'
+                        uk-animation-kenburns: 'kenburns'
+                        uk-animation-shake: 'shake'
+                        uk-animation-stroke: 'stroke'
+                    header.module.utils.animation.scrollspy.target:
+                      name: lightbox_autoplayinterval
+                      label: UIKIT.SCROLLSPY.TARGET
+                      type: text
+                    header.module.utils.animation.scrollspy.delay:
+                      name:  uikit_scrollspy_type
+                      label: UIKIT.SCROLLSPY.DELAY
+                      type: number
+                      default: 500
+
+# form:
+#   fields:
+#     tabs:
+#       fields:
+#         content:
+#           fields:
+# form:
+#   fields:
+#     tabs:
+#       type: tabs
+#       active: 1
+#             header.module.utils:
+#               name: module_utils
+#               label: MODULE.UTILS
+#               help: MODULE.UTILS.HELP
+#               type: fieldset
+#               title: MODULE.UTILS
+#               info: MODULE.UTILS.INFO
+#               style: vertical
+#               icon: sliders
+#               collapsed: false
+#               collapsible: true
+#               fields:
+#                 header.module.utils.background: # fieldset needs full path from header in order to remember state
+#                   name: uikit_background
+#                   label: UIKIT.BACKGROUND
+#                   type: pagemediaselect
+#                   multiple: false
+#                 header.module.utils.animation:
+#                   name: uikit_animation
+#                   label: UIKIT.ANIMATION
+#                   type: fieldset
+#                   title: UIKIT.ANIMATION
+#                   help: UIKIT.ANIMATION.HELP
+#                   info: UIKIT.ANIMATION.INFO
+#                   icon: play-circle       # Fork Awesome icons system (see : forkaweso.me).
+#                   collapsed: true      # Initial state of fieldset (see collapsible option)
+#                   collapsible: true    # Whether one can expand the fieldset or not
+#                   fields:
+#                     header.module.utils.animation.animate:
+#                       name: module_animate
+#                       label: MODULE.ANIMATE
+#                       type: toggle
+#                       default: 0
+#                       options:
+#                         0: GENERAL.NO
+#                         1: GENERAL.YES
+#                       validate:
+#                         type: bool
+#                     header.module.utils.animation.type:
+#                       name: uikit_animation_type
+#                       label: UIKIT.ANIMATION.TYPE
+#                       type: select
+#                       classes: fancy
+#                       default: 'fade'
+#                       options:
+#                         uk-animation-fade: 'fade'
+#                         uk-animation-scale-up: 'scale-up'
+#                         uk-animation-scale-down: 'scale-down'
+#                         uk-animation-slide-top: 'slide-top'
+#                         uk-animation-slide-bottom: 'slide-bottom'
+#                         uk-animation-slide-left: 'slide-left'
+#                         uk-animation-slide-right: 'slide-right'
+#                         uk-animation-slide-top-small: 'slide-top-small'
+#                         uk-animation-slide-bottom-small: 'slide-bottom-small'
+#                         uk-animation-slide-left-small: 'slide-left-small'
+#                         uk-animation-slide-right-small: 'slide-right-small'
+#                         uk-animation-slide-top-medium: 'slide-top-medium'
+#                         uk-animation-slide-bottom-medium: 'slide-bottom-medium'
+#                         uk-animation-slide-left-medium: 'slide-left-medium'
+#                         uk-animation-slide-right-medium: 'slide-right-medium'
+#                         uk-animation-kenburns: 'kenburns'
+#                         uk-animation-shake: 'shake'
+#                         uk-animation-stroke: 'stroke'
+#                     header.module.utils.animation.scrollspy.target:
+#                       name: lightbox_autoplayinterval
+#                       label: UIKIT.SCROLLSPY.TARGET
+#                       type: text
+#                     header.module.utils.animation.scrollspy.delay:
+#                       name:  uikit_scrollspy_type
+#                       label: UIKIT.SCROLLSPY.DELAY
+#                       type: number
+#                       default: 500

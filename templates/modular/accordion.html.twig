@@ -1,1 +1,10 @@
-{{ page.content }}
+<ul uk-accordion="collapsible: false">
+	{% for accordion in page.header.uikit.accordion %}
+		<li>
+			<a class="uk-accordion-title" href="#">{{ accordion.title }}</a>
+			<div class="uk-accordion-content">
+				{{ accordion.content }}
+			</div>
+		</li>
+	{% endfor %}
+</ul>
